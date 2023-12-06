@@ -1,6 +1,6 @@
 module.exports = {
   title: "Video2Openpose",
-  icon: "icon.jpeg",
+  icon: "icon.gif",
   description: "Turn any video into Openpose video https://huggingface.co/spaces/fffiloni/video2openpose2",
   menu: async (kernel) => {
     let installed = await kernel.exists(__dirname, "app", "env")
