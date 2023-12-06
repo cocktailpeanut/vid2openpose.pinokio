@@ -4,6 +4,11 @@
     "amd": "pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm5.6",
     "default": "pip install torch torchvision torchaudio"
   },
+  "requires": [{
+    "type": "conda",
+    "name": "ffmpeg",
+    "args": "-c conda-forge"
+  }],
   "run": [{
     "method": "shell.run",
     "params": { "message": "git clone https://huggingface.co/spaces/fffiloni/video2openpose2 app" }
