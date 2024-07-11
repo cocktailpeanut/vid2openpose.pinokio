@@ -14,22 +14,22 @@ module.exports = {
         if (session && session.url) {
           return [
             { icon: "fa-solid fa-spin fa-circle-notch", text: "Running" },
-            { icon: "fa-solid fa-rocket", text: "Web UI", href: session.url, target: "_blank" },
+            { default: true, icon: "fa-solid fa-rocket", text: "Web UI", href: session.url, target: "_blank" },
             { icon: "fa-solid fa-terminal", text: "Terminal", href: "start.json", params: { fullscreen: true } }
           ]
         } else {
           return [
             { icon: "fa-solid fa-spin fa-circle-notch", text: "Running" },
-            { icon: "fa-solid fa-terminal", text: "Terminal", href: "start.json", params: { fullscreen: true } }
+            { default: true, icon: "fa-solid fa-terminal", text: "Terminal", href: "start.json", params: { fullscreen: true } }
           ]
         }
       } else {
         return [
-          { icon: "fa-solid fa-power-off", text: "start", href: "start.json", params: { fullscreen: true, run: true } },
+          { default: true, icon: "fa-solid fa-power-off", text: "start", href: "start.json", params: { fullscreen: true, run: true } },
         ]
       }
     } else {
-      return [{ icon: "fa-solid fa-plug", text: "Install", href: "install.json", params: { run: true, fullscreen: true } }]
+      return [{ default: true, icon: "fa-solid fa-plug", text: "Install", href: "install.json", params: { run: true, fullscreen: true } }]
     }
   }
 }
