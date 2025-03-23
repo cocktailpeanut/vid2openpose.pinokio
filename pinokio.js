@@ -1,12 +1,13 @@
 module.exports = {
+  version: "3.0",
   title: "Video2Openpose",
   icon: "icon.gif",
   description: "Turn any video into Openpose video https://huggingface.co/spaces/fffiloni/video2openpose2",
   menu: async (kernel) => {
     let installed = await kernel.exists(__dirname, "app", "env")
-    let installing = kernel.running(__dirname, "install.json")
+    let installing = kernel.running(__dirname, "install.js")
     if (installing) {
-      return [{ icon: "fa-solid fa-plug", text: "Installing", href: "install.json", params: { fullscreen: true, run: true } }]
+      return [{ icon: "fa-solid fa-plug", text: "Installing", href: "install.js", params: { fullscreen: true, run: true } }]
     } else if (installed) {
       let running = await kernel.running(__dirname, "start.json")
       if (running) {
@@ -29,7 +30,7 @@ module.exports = {
         ]
       }
     } else {
-      return [{ default: true, icon: "fa-solid fa-plug", text: "Install", href: "install.json", params: { run: true, fullscreen: true } }]
+      return [{ default: true, icon: "fa-solid fa-plug", text: "Install", href: "install.js", params: { run: true, fullscreen: true } }]
     }
   }
 }
